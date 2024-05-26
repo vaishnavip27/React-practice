@@ -1,2 +1,2 @@
 # React-practice
-A repo where I made my first React app
+A repo where I built my first React app
