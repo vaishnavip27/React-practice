@@ -1,34 +1,6 @@
-import reactImg from "./assets/react-core-concepts.png";
-import componentsImg from "./assets/components.png";
-const reactDescriptions = ["Fundamental", "Crucial", "Core"];
-
-function getRandomInt(max) {
-  return Math.floor(Math.random() * (max + 1));
-}
-
-function Header() {
-  const description = reactDescriptions[getRandomInt(2)];
-  return (
-    <header>
-      <img src={reactImg} alt="Stylized atom" />
-      <h1>React Essentials</h1>
-      <p>
-        {description} React concepts you will need for almost any app you are
-        going to build!
-      </p>
-    </header>
-  );
-}
-
-function CoreConcept(props) {
-  return (
-    <li>
-      <img src={props.image} alt="props.title" />
-      <h3>{props.title}</h3>
-      <p>{props.description}</p>
-    </li>
-  );
-}
+import { CORE_CONCEPTS } from "./data.js";
+import Header from "./components/Header.jsx";
+import CoreConcept from "./components/CoreConcept.jsx";
 
 function App() {
   return (
@@ -38,26 +10,10 @@ function App() {
         <section id="core-concepts">
           <h2>Core Concepts</h2>
           <ul>
-            <CoreConcept
-              title="Components"
-              description="The core UI building block"
-              image={componentsImg}
-            />
-            <CoreConcept
-              title="Props"
-              description="Using components with different data"
-              image={componentsImg}
-            />
-            <CoreConcept
-              title="styling"
-              description="Styling all the static website"
-              image={componentsImg}
-            />
-            <CoreConcept
-              title="coding"
-              description="Making the website interactive"
-              image={componentsImg}
-            />
+            <CoreConcept {...CORE_CONCEPTS[0]} />
+            <CoreConcept {...CORE_CONCEPTS[1]} />
+            <CoreConcept {...CORE_CONCEPTS[2]} />
+            <CoreConcept {...CORE_CONCEPTS[3]} />
           </ul>
         </section>
       </main>
