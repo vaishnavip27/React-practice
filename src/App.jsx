@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { CORE_CONCEPTS } from "./data.js";
 import Header from "./components/Header.jsx";
 import CoreConcept from "./components/CoreConcept.jsx";
@@ -14,6 +15,7 @@ function App() {
   console.log("APP COMPONENT EXECUTING");
 
   let tabContent = <p>Please select a topic</p>;
+
   if (selectedTopic) {
     tabContent = (
       <div id="tab-content">
